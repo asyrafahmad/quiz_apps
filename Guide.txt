@@ -1,0 +1,10 @@
+DartPad                                 // web-based playground
+
+----------------------------------------------------------------------
+
+ElevatedButton      = RaisedButton (unable deprecated in setting)
+
+----------------------------------------------------------------------
+Shortcut
+
+alt + shift + f = to make clean code
