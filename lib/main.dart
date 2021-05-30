@@ -43,9 +43,11 @@ class _MyAppState extends State<MyApp> {
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
-    
+
     if (_questionIndex < questions.length) {
       print('We have more questions!');
+    } else {
+      print('No more questions!');
     }
   }
 
@@ -55,18 +57,20 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Hello!'),
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex]['questionText'],
-            ),
-            ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answer) {
-              return Answer(_answerQuestion, answer);
-            }).toList()
-            // ElevatedButton(onPressed: onPressed, child: child)
-          ],
-        ),
+        body: _questionIndex < questions.length
+            ? Column(
+                children: [
+                  Question(
+                    questions[_questionIndex]['questionText'],
+                  ),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                  // ElevatedButton(onPressed: onPressed, child: child)
+                ],
+              )
+            : Center(child: Text('You did it!')),
       ),
     );
   }
