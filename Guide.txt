@@ -13,3 +13,5 @@ alt + shift + f = to make clean code
 Learning
 
 ...                         = spread operator    
+final                       = runtime constant value
+const                       = complie time constant value
